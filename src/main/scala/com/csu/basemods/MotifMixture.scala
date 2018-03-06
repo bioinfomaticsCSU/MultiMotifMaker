@@ -56,7 +56,7 @@ object Constants {
   // Context size is hard-coded.  It's 41bp -- -20bp to +20 around the cognate base
   val CONTEXT_SIZE: Int = 41
   val CONTEXT_OFFSET: Int = 20
-  var CONTEXT_POOLTHREADS:Int = 17
+  var CONTEXT_POOLTHREADS:Int = 16
 }
 
 
