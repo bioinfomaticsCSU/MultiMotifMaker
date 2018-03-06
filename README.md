@@ -15,15 +15,14 @@ Recently, the third generation sequencing technologies, such as Pacbio SMRT,
 provide a new way to identify base methylation in the genome. For each methylated site, 
 the SMRT pipeline outputs a sequence of 41 bases centered by the methylated base. 
 The number of methylated site ranges from ten thousands for E. coli to ten millions for human.
-Identifying methylation motif from the output of SMRT pipeline differs from previous de novo motif finding algorithms.  
-See the publication for more background on modification detection:
-([http://nar.oxfordjournals.org/content/early/2011/12/07/nar.gkr1146.full](http://nar.oxfordjournals.org/content/early/2011/12/07/nar.gkr1146.full))
+Identifying methylation motif from the output of SMRT pipeline differs from previous de novo motif finding algorithms.
+See the publication for more background on modification detection: ([http://nar.oxfordjournals.org/content/early/2011/12/07/nar.gkr1146.full](http://nar.oxfordjournals.org/content/early/2011/12/07/nar.gkr1146.full))
 
 Algorithm
 ---------
 Existing motif finding algorithms such as MEME, Gibbs motif Sampler and MEpigram. 
-None of those methods consider the base centralized sequences as input. 
-In addition, none of those methods include the base modification signals in their algorithm. 
+None of those methods considers the base centralized sequences as input. 
+In addition, none of those methods includes the base modification signals in their algorithms. 
 
 In order to find methylation motifs from SMRT output methylation sequences, 
 the PacBio developed a tool, MotifMaker.  
@@ -34,11 +33,11 @@ in single-threaded and the search process is very time consuming(MotifMaker).
 
 Here, we give a rough overview of the algorithm used by MultiMotifMaker.
 The branch-and-bound search step, which is designed to search motifs from 
-modification sequences through a series of iterations,is the crucial and most time-consuming procedure of 
+modification sequences through a series of iterations, is the most time-consuming procedure of 
 overall workflow of MotifMaker. Since every expansion node of the solution space tree 
 can calculate its subtree independently, multiple expansion nodes can be computed at the same time. 
-Therefore, according to the branching rule in the branch-and-bound method, we may first calculate the candidate living nodes 
-of the first * k * layers of the invisible tree with * n * son nodes for every expansion node. 
+Therefore, according to the branching rule in the branch-and-bound method, we may first calculate *n^k^* candidate living nodes 
+of the first *k* layers of the invisible tree with *n* son nodes for every expansion node. 
 Then, branch-and-bound search method will be applied to these candidate living nodes respectively. 
 Consequently, it is possible to submit these computing tasks to a thread pool to achieve parallel computation. 
 Every thread will search their local solution space trees to obtain local optimal solutions independently. 
@@ -54,11 +53,11 @@ Usage
 
 The jar supplied in artifacts/MultiMotifMaker.jar bundles all
 dependencies and should be runnable on most systems. The sample datasets can be found in ./resources.
-(The original datasets are from the website:[https://github.com/PacificBiosciences/DevNet/wiki/E.-coli-Bacterial-Assembly](https://github.com/PacificBiosciences/DevNet/wiki/E.-coli-Bacterial-Assembly) and [https://www.ncbi.nlm.nih.gov/Traces/study/?WebEnv=NCID_1_33150972_130.14.22.76_5555_1520210378_3351063973_0MetA0_S_HStore&query_key=9](https://www.ncbi.nlm.nih.gov/Traces/study/?WebEnv=NCID_1_33150972_130.14.22.76_5555_1520210378_3351063973_0MetA0_S_HStore&query_key=9).)
+(The original datasets are from the website: [https://github.com/PacificBiosciences/DevNet/wiki/E.-coli-Bacterial-Assembly](https://github.com/PacificBiosciences/DevNet/wiki/E.-coli-Bacterial-Assembly) and [https://www.ncbi.nlm.nih.gov/Traces/study/?WebEnv=NCID_1_33150972_130.14.22.76_5555_1520210378_3351063973_0MetA0_S_HStore&query_key=9](https://www.ncbi.nlm.nih.gov/Traces/study/?WebEnv=NCID_1_33150972_130.14.22.76_5555_1520210378_3351063973_0MetA0_S_HStore&query_key=9).)
 
 For command-line motif finding, run the 'find' sub-command, and pass
 the reference fasta and the modifications.gff(.gz) file emitted by the
-PacBio modification detection workflow (SMRT Analysis:[https://www.pacb.com/products-and-services/analytical-software/smrt-analysis/](https://www.pacb.com/products-and-services/analytical-software/smrt-analysis/)).   
+PacBio modification detection workflow (SMRT Analysis: [https://www.pacb.com/products-and-services/analytical-software/smrt-analysis/](https://www.pacb.com/products-and-services/analytical-software/smrt-analysis/)).   
 The reprocess command annotates the gff with motif information for better genome browsing.
 
 ```
