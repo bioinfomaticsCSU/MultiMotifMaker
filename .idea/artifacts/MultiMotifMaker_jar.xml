@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MultiMotifMaker:jar">
+    <output-path>$PROJECT_DIR$/artifacts</output-path>
+    <root id="archive" name="MultiMotifMaker.jar">
+      <element id="module-output" name="MultiMotifMaker" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/scopt_2.11-3.5.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/opencsv-2.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/jcommander-1.72.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="E:/Program Files/scala/lib/scala-actors-2.11.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="E:/Program Files/scala/lib/scala-actors-migration_2.11-1.1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="E:/Program Files/scala/lib/scala-library.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="E:/Program Files/scala/lib/scala-parser-combinators_2.11-1.0.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="E:/Program Files/scala/lib/scala-reflect.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="E:/Program Files/scala/lib/scala-swing_2.11-1.0.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="E:/Program Files/scala/lib/scala-xml_2.11-1.0.4.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
