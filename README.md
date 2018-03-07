@@ -53,7 +53,7 @@ Usage
 
 The jar supplied in artifacts/MultiMotifMaker.jar bundles all
 dependencies and should be runnable on most systems. The sample datasets can be found in ./resources.
-(The original datasets are from the website: [https://github.com/PacificBiosciences/DevNet/wiki/E.-coli-Bacterial-Assembly](https://github.com/PacificBiosciences/DevNet/wiki/E.-coli-Bacterial-Assembly) and [https://www.ncbi.nlm.nih.gov/Traces/study/?WebEnv=NCID_1_33150972_130.14.22.76_5555_1520210378_3351063973_0MetA0_S_HStore&query_key=9](https://www.ncbi.nlm.nih.gov/Traces/study/?WebEnv=NCID_1_33150972_130.14.22.76_5555_1520210378_3351063973_0MetA0_S_HStore&query_key=9).)
+(The original datasets are as follows, *Geobacter metallireducens* data: [https://github.com/PacificBiosciences/MotifMaker/tree/master/src/test/resources](https://github.com/PacificBiosciences/MotifMaker/tree/master/src/test/resources) , *E.coli* data: [https://github.com/PacificBiosciences/DevNet/wiki/E.-coli-Bacterial-Assembly](https://github.com/PacificBiosciences/DevNet/wiki/E.-coli-Bacterial-Assembly), *Arabidopsis* data: NCBI(PRJNA314706),[https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNA314706&go=go](https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNA314706&go=go).)
 
 For command-line motif finding, run the 'find' sub-command, and pass
 the reference fasta and the modifications.gff(.gz) file emitted by the
