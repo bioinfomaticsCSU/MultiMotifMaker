@@ -36,7 +36,7 @@ The branch-and-bound search step, which is designed to search motifs from
 modification sequences through a series of iterations, is the most time-consuming procedure of 
 overall workflow of MotifMaker. Since every expansion node of the solution space tree 
 can calculate its subtree independently, multiple expansion nodes can be computed at the same time. 
-Therefore, according to the branching rule in the branch-and-bound method, we may first calculate n^{k} candidate living nodes 
+Therefore, according to the branching rule in the branch-and-bound method, we may first calculate n^k^ candidate living nodes 
 of the first *k* layers of the invisible tree with *n* son nodes for every expansion node. 
 Then, branch-and-bound search method will be applied to these candidate living nodes respectively. 
 Consequently, it is possible to submit these computing tasks to a thread pool to achieve parallel computation. 
